@@ -1,6 +1,45 @@
 @import "tailwindcss";
 
 :root {
+  /* Light Theme */
+  --background: #f8fafc; /* Slate 50 */
+  --foreground: #020617; /* Slate 950 */
+  
+  /* Glassy Cards */
+  --card: rgba(255, 255, 255, 0.8);
+  --card-foreground: #020617;
+  
+  --popover: #ffffff;
+  --popover-foreground: #020617;
+  
+  /* Vibrant Primary */
+  --primary: #0ea5e9; /* Sky 500 */
+  --primary-foreground: #f8fafc;
+  
+  --secondary: #f1f5f9; /* Slate 100 */
+  --secondary-foreground: #0f172a;
+  
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b; /* Slate 500 */
+  
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  
+  --border: #e2e8f0; /* Slate 200 */
+  --input: #e2e8f0;
+  --ring: #0ea5e9;
+  
+  --radius: 0.75rem;
+
+  /* Gradient Glows */
+  --gradient-glow-1: rgba(14, 165, 233, 0.1);
+  --gradient-glow-2: rgba(14, 165, 233, 0.05);
+}
+
+.dark {
   /* Modern Deep Space Theme */
   --background: #020617; /* Slate 950 */
   --foreground: #f8fafc; /* Slate 50 */
@@ -31,8 +70,84 @@
   --border: #1e293b; /* Slate 800 */
   --input: #1e293b;
   --ring: #38bdf8;
+
+  /* Gradient Glows */
+  --gradient-glow-1: rgba(56, 189, 248, 0.15);
+  --gradient-glow-2: rgba(56, 189, 248, 0.05);
+}
+
+.blue {
+  /* Ocean Blue Theme */
+  --background: #172554; /* Blue 950 */
+  --foreground: #eff6ff; /* Blue 50 */
   
-  --radius: 0.75rem; /* More rounded */
+  /* Glassy Cards */
+  --card: rgba(30, 58, 138, 0.5); /* Blue 900 */
+  --card-foreground: #eff6ff;
+  
+  --popover: #172554;
+  --popover-foreground: #eff6ff;
+  
+  /* Vibrant Primary */
+  --primary: #60a5fa; /* Blue 400 */
+  --primary-foreground: #172554;
+  
+  --secondary: #1e3a8a; /* Blue 900 */
+  --secondary-foreground: #eff6ff;
+  
+  --muted: #1e3a8a;
+  --muted-foreground: #93c5fd; /* Blue 300 */
+  
+  --accent: #1e40af; /* Blue 800 */
+  --accent-foreground: #eff6ff;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #eff6ff;
+  
+  --border: #1e40af; /* Blue 800 */
+  --input: #1e40af;
+  --ring: #60a5fa;
+
+  /* Gradient Glows */
+  --gradient-glow-1: rgba(96, 165, 250, 0.2);
+  --gradient-glow-2: rgba(37, 99, 235, 0.1);
+}
+
+.space {
+  /* Deep Space Black Theme */
+  --background: #000000; /* Pure Black */
+  --foreground: #f8fafc; /* Slate 50 */
+  
+  /* Glassy Cards - Very Dark */
+  --card: rgba(10, 10, 10, 0.7); 
+  --card-foreground: #f8fafc;
+  
+  --popover: #0a0a0a;
+  --popover-foreground: #f8fafc;
+  
+  /* Neon Purple/Indigo Primary */
+  --primary: #818cf8; /* Indigo 400 */
+  --primary-foreground: #000000;
+  
+  --secondary: #171717; /* Neutral 900 */
+  --secondary-foreground: #f8fafc;
+  
+  --muted: #171717;
+  --muted-foreground: #a3a3a3; /* Neutral 400 */
+  
+  --accent: #262626; /* Neutral 800 */
+  --accent-foreground: #f8fafc;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  
+  --border: #262626; /* Neutral 800 */
+  --input: #262626;
+  --ring: #818cf8;
+
+  /* Gradient Glows - Cosmic Purple/Pink */
+  --gradient-glow-1: rgba(129, 140, 248, 0.15); /* Indigo */
+  --gradient-glow-2: rgba(192, 132, 252, 0.1); /* Purple */
 }
 
 @theme {
@@ -90,20 +205,10 @@
   body {
     @apply bg-background text-foreground antialiased;
     /* Subtle background gradient for depth */
+    background-color: var(--background);
     background-image: 
-      radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15), transparent 40%),
-      radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.05), transparent 25%),
-      linear-gradient(to bottom, #020617, #020617);
+      radial-gradient(circle at 50% 0%, var(--gradient-glow-1), transparent 40%),
+      radial-gradient(circle at 0% 0%, var(--gradient-glow-2), transparent 25%);
     background-attachment: fixed;
-  }
-}
-
-/* Glassmorphism Utilities */
-@layer utilities {
-  .glass {
-    @apply bg-card backdrop-blur-md border border-white/5 shadow-xl;
-  }
-  .glass-hover {
-    @apply hover:bg-white/5 transition-colors duration-300;
   }
 }

@@ -16,6 +16,8 @@ import {
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
+import { ThemeToggle } from "@/components/ThemeToggle";
+
 const navItems = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Blueprint", href: "/blueprint", icon: BrainCircuit },
@@ -88,6 +90,10 @@ export function Sidebar({ projectId = "coincollect" }: { projectId?: string }) {
 
       {/* User / Footer */}
       <div className="p-4 border-t border-border/50">
+        <div className="flex items-center justify-between px-2 mb-2">
+           <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Theme</span>
+           <ThemeToggle />
+        </div>
         <div className="flex items-center gap-3 px-2 py-2">
           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500" />
           <div className="flex-1">

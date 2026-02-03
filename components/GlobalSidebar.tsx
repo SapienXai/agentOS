@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { name: "Global Dashboard", href: "/", icon: LayoutDashboard },
@@ -74,6 +75,10 @@ export function GlobalSidebar() {
 
       {/* User / Footer */}
       <div className="p-4 border-t border-white/5 bg-black/20">
+        <div className="flex items-center justify-between px-2 mb-2">
+           <span className="text-xs font-medium text-muted-foreground">Theme</span>
+           <ThemeToggle />
+        </div>
         <div className="flex items-center gap-3 px-2 py-2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group">
           <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-400 p-[2px] ring-2 ring-transparent group-hover:ring-primary/50 transition-all">
             <div className="w-full h-full rounded-full bg-black/50" />

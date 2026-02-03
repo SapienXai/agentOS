@@ -46,7 +46,7 @@ export function GlobalLayoutWrapper({
       {/* Main Content */}
       <main className="flex-1 flex flex-col h-full overflow-hidden relative z-10">
         {/* Mobile Header */}
-        <div className="md:hidden flex items-center justify-between p-4 border-b border-white/5 bg-card/30 backdrop-blur-xl sticky top-0 z-30">
+        <div className="md:hidden flex items-center justify-between p-4 border-b border-border bg-card/30 backdrop-blur-xl sticky top-0 z-30">
            <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 -ml-2 text-muted-foreground hover:text-foreground">
              <Menu className="w-6 h-6" />
            </button>

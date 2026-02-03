@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 export function Card({ className, children }: { className?: string, children: React.ReactNode }) {
   return (
     <div className={cn(
-      "bg-card/50 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden flex flex-col h-full shadow-lg transition-all duration-300 hover:shadow-primary/5 hover:border-white/20", 
+      "bg-card/50 backdrop-blur-xl border border-border rounded-xl overflow-hidden flex flex-col h-full shadow-lg transition-all duration-300 hover:shadow-primary/5 hover:border-primary/20", 
       className
     )}>
       {children}
@@ -13,7 +13,7 @@ export function Card({ className, children }: { className?: string, children: Re
 
 export function CardHeader({ className, children }: { className?: string, children: React.ReactNode }) {
   return (
-    <div className={cn("p-6 border-b border-white/5 flex-none", className)}>
+    <div className={cn("p-6 border-b border-border/50 flex-none", className)}>
       {children}
     </div>
   );
