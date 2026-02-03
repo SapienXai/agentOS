@@ -150,6 +150,117 @@
   --gradient-glow-2: rgba(192, 132, 252, 0.1); /* Purple */
 }
 
+.bw {
+  /* Black & White Monochrome Theme */
+  --background: #ffffff; /* Pure White */
+  --foreground: #000000; /* Pure Black */
+  
+  /* High Contrast Cards */
+  --card: #ffffff;
+  --card-foreground: #000000;
+  
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  
+  /* Monochrome Primary */
+  --primary: #000000; /* Black */
+  --primary-foreground: #ffffff; /* White */
+  
+  --secondary: #f4f4f5; /* Zinc 100 */
+  --secondary-foreground: #18181b; /* Zinc 900 */
+  
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a; /* Zinc 500 */
+  
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  
+  --destructive: #000000;
+  --destructive-foreground: #ffffff;
+  
+  --border: #e4e4e7; /* Zinc 200 */
+  --input: #e4e4e7;
+  --ring: #000000;
+
+  /* No Gradient Glows for Clean Look */
+  --gradient-glow-1: transparent;
+  --gradient-glow-2: transparent;
+}
+
+.wb {
+  /* White & Black Inverted Theme */
+  --background: #000000; /* Pure Black */
+  --foreground: #ffffff; /* Pure White */
+  
+  /* High Contrast Cards */
+  --card: #000000;
+  --card-foreground: #ffffff;
+  
+  --popover: #000000;
+  --popover-foreground: #ffffff;
+  
+  /* Monochrome Primary */
+  --primary: #ffffff; /* White */
+  --primary-foreground: #000000; /* Black */
+  
+  --secondary: #27272a; /* Zinc 800 */
+  --secondary-foreground: #fafafa; /* Zinc 50 */
+  
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa; /* Zinc 400 */
+  
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  
+  --destructive: #ffffff;
+  --destructive-foreground: #000000;
+  
+  --border: #3f3f46; /* Zinc 700 */
+  --input: #3f3f46;
+  --ring: #ffffff;
+
+  /* No Gradient Glows for Clean Look */
+  --gradient-glow-1: transparent;
+  --gradient-glow-2: transparent;
+}
+
+.purple {
+  /* Royal Purple Theme */
+  --background: #2e1065; /* Violet 950 */
+  --foreground: #faf5ff; /* Violet 50 */
+  
+  /* Glassy Cards */
+  --card: rgba(46, 16, 101, 0.6); 
+  --card-foreground: #faf5ff;
+  
+  --popover: #2e1065;
+  --popover-foreground: #faf5ff;
+  
+  /* Vibrant Primary */
+  --primary: #d8b4fe; /* Purple 300 */
+  --primary-foreground: #2e1065;
+  
+  --secondary: #4c1d95; /* Violet 900 */
+  --secondary-foreground: #faf5ff;
+  
+  --muted: #4c1d95;
+  --muted-foreground: #a78bfa; /* Violet 400 */
+  
+  --accent: #5b21b6; /* Violet 800 */
+  --accent-foreground: #faf5ff;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #faf5ff;
+  
+  --border: #5b21b6; /* Violet 800 */
+  --input: #5b21b6;
+  --ring: #d8b4fe;
+
+  /* Gradient Glows */
+  --gradient-glow-1: rgba(216, 180, 254, 0.15);
+  --gradient-glow-2: rgba(168, 85, 247, 0.1);
+}
+
 @theme {
   --color-border: var(--border);
   --color-input: var(--input);

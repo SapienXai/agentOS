@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Moon, Sun, Waves, Sparkles } from "lucide-react"
+import { Moon, Sun, Waves, Sparkles, Contrast, Circle, Zap } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/Button"
@@ -27,6 +27,9 @@ export function ThemeToggle() {
     if (theme === 'light') setTheme('dark')
     else if (theme === 'dark') setTheme('blue')
     else if (theme === 'blue') setTheme('space')
+    else if (theme === 'space') setTheme('bw')
+    else if (theme === 'bw') setTheme('wb')
+    else if (theme === 'wb') setTheme('purple')
     else setTheme('light')
   }
 
@@ -55,6 +58,21 @@ export function ThemeToggle() {
       <Sparkles 
         className={`absolute h-[1.2rem] w-[1.2rem] transition-all duration-300 ${
           theme === 'space' ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
+        }`} 
+      />
+      <Contrast 
+        className={`absolute h-[1.2rem] w-[1.2rem] transition-all duration-300 ${
+          theme === 'bw' ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
+        }`} 
+      />
+      <Circle 
+        className={`absolute h-[1.2rem] w-[1.2rem] transition-all duration-300 fill-foreground ${
+          theme === 'wb' ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
+        }`} 
+      />
+      <Zap 
+        className={`absolute h-[1.2rem] w-[1.2rem] transition-all duration-300 ${
+          theme === 'purple' ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
         }`} 
       />
       <span className="sr-only">Toggle theme</span>
