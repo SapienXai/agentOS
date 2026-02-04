@@ -18,7 +18,7 @@ export function ProjectLayout({
     <div className="flex h-screen bg-background text-foreground overflow-hidden">
       {/* Desktop Sidebar */}
       <div className="hidden md:block h-full">
-        <Sidebar projectId={projectId} />
+        <Sidebar projectId={projectId} activeIndicatorId="activeNavDesktop" />
       </div>
 
       {/* Mobile Sidebar Overlay */}
@@ -40,7 +40,7 @@ export function ProjectLayout({
         <div className="absolute top-2 right-2 p-2" onClick={() => setIsMobileMenuOpen(false)}>
             <X className="w-5 h-5 text-muted-foreground" />
         </div>
-        <Sidebar projectId={projectId} />
+        <Sidebar projectId={projectId} activeIndicatorId="activeNavMobile" />
       </div>
 
       {/* Main Content */}

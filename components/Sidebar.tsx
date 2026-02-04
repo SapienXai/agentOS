@@ -27,7 +27,13 @@ const navItems = [
   { name: "Settings", href: "/settings", icon: Settings },
 ];
 
-export function Sidebar({ projectId = "coincollect" }: { projectId?: string }) {
+export function Sidebar({ 
+  projectId = "coincollect",
+  activeIndicatorId = "activeNav",
+}: { 
+  projectId?: string;
+  activeIndicatorId?: string;
+}) {
   const pathname = usePathname();
 
   const projectNames: Record<string, string> = {
@@ -65,24 +71,25 @@ export function Sidebar({ projectId = "coincollect" }: { projectId?: string }) {
               key={item.href} 
               href={href}
               className={cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 relative group",
+                "flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium transition-all duration-300 relative group overflow-hidden",
                 isActive 
-                  ? "text-primary bg-primary/5" 
+                  ? "text-primary bg-primary/10 shadow-[0_0_20px_rgba(56,189,248,0.1)]" 
                   : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
               )}
             >
-              <item.icon className={cn("w-5 h-5", isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground")} />
-              {item.name}
+              <item.icon className={cn("w-5 h-5 transition-colors duration-300", isActive ? "text-primary" : "text-muted-foreground group-hover:text-primary/80")} />
+              <span className="relative z-10">{item.name}</span>
               
               {isActive && (
                 <motion.div 
-                  layoutId="activeNav"
-                  className="absolute left-0 w-1 h-6 bg-primary rounded-r-full"
+                  layoutId={activeIndicatorId}
+                  className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full shadow-[0_0_18px_rgba(56,189,248,0.95)] drop-shadow-[0_0_14px_rgba(56,189,248,0.85)] pointer-events-none"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
                 />
               )}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           );
         })}

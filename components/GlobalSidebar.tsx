@@ -19,7 +19,11 @@ const navItems = [
   { name: "Settings", href: "/settings", icon: Settings },
 ];
 
-export function GlobalSidebar() {
+export function GlobalSidebar({
+  activeIndicatorId = "activeNavGlobal",
+}: {
+  activeIndicatorId?: string;
+}) {
   const pathname = usePathname();
 
   return (
@@ -59,8 +63,8 @@ export function GlobalSidebar() {
               
               {isActive && (
                 <motion.div 
-                  layoutId="activeNavGlobal"
-                  className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full shadow-[0_0_10px_#38bdf8]"
+                  layoutId={activeIndicatorId}
+                  className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full shadow-[0_0_18px_rgba(56,189,248,0.95)] drop-shadow-[0_0_14px_rgba(56,189,248,0.85)]"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}

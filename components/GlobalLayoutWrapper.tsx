@@ -16,7 +16,7 @@ export function GlobalLayoutWrapper({
     <div className="flex h-screen bg-transparent text-foreground overflow-hidden">
       {/* Desktop Sidebar */}
       <div className="hidden md:block h-full z-20">
-        <GlobalSidebar />
+        <GlobalSidebar activeIndicatorId="activeNavGlobalDesktop" />
       </div>
 
       {/* Mobile Sidebar Overlay */}
@@ -39,7 +39,7 @@ export function GlobalLayoutWrapper({
            <div className="absolute top-2 right-2 p-2 z-50" onClick={() => setIsMobileMenuOpen(false)}>
               <X className="w-5 h-5 text-muted-foreground hover:text-foreground cursor-pointer" />
            </div>
-           <GlobalSidebar />
+           <GlobalSidebar activeIndicatorId="activeNavGlobalMobile" />
         </div>
       </div>
 
