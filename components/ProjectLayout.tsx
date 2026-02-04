@@ -50,7 +50,10 @@ export function ProjectLayout({
            <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 -ml-2 text-muted-foreground hover:text-foreground">
              <Menu className="w-6 h-6" />
            </button>
-           <span className="font-semibold">AgentOS</span>
+           <span className="relative font-semibold [-webkit-text-stroke:0.35px_rgba(255,255,255,0.18)] [text-shadow:0_0_10px_rgba(56,189,248,0.25)]">
+             <span className="relative z-10">AgentOS</span>
+             <span className="absolute -inset-x-1 -inset-y-0.5 rounded-full bg-primary/20 blur-[6px] opacity-80 pointer-events-none" />
+           </span>
            <div className="w-6" /> {/* Spacer */}
         </div>
 

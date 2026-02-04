@@ -37,7 +37,9 @@ export function GlobalSidebar({
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-[10px] font-bold text-primary/80 uppercase tracking-widest mb-0.5">System</p>
-            <h2 className="font-bold text-foreground text-lg tracking-tight truncate">AgentOS</h2>
+            <h2 className="text-foreground text-lg tracking-tight truncate relative font-semibold [-webkit-text-stroke:0.35px_rgba(255,255,255,0.18)] [text-shadow:0_0_10px_rgba(56,189,248,0.25)]">
+              AgentOS
+            </h2>
           </div>
         </div>
       </div>
