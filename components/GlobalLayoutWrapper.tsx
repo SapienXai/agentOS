@@ -39,7 +39,10 @@ export function GlobalLayoutWrapper({
            <div className="absolute top-2 right-2 p-2 z-50" onClick={() => setIsMobileMenuOpen(false)}>
               <X className="w-5 h-5 text-muted-foreground hover:text-foreground cursor-pointer" />
            </div>
-           <GlobalSidebar activeIndicatorId="activeNavGlobalMobile" />
+           <GlobalSidebar
+             activeIndicatorId="activeNavGlobalMobile"
+             onNavigate={() => setIsMobileMenuOpen(false)}
+           />
         </div>
       </div>
 
