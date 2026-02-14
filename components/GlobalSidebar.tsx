@@ -21,8 +21,10 @@ const navItems = [
 
 export function GlobalSidebar({
   activeIndicatorId = "activeNavGlobal",
+  onNavigate,
 }: {
   activeIndicatorId?: string;
+  onNavigate?: () => void;
 }) {
   const pathname = usePathname();
 
@@ -53,6 +55,7 @@ export function GlobalSidebar({
             <Link 
               key={item.href} 
               href={item.href}
+              onClick={onNavigate}
               className={cn(
                 "flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium transition-all duration-300 relative group overflow-hidden",
                 isActive 

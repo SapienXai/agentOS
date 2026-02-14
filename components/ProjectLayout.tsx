@@ -40,7 +40,11 @@ export function ProjectLayout({
         <div className="absolute top-2 right-2 p-2" onClick={() => setIsMobileMenuOpen(false)}>
             <X className="w-5 h-5 text-muted-foreground" />
         </div>
-        <Sidebar projectId={projectId} activeIndicatorId="activeNavMobile" />
+        <Sidebar
+          projectId={projectId}
+          activeIndicatorId="activeNavMobile"
+          onNavigate={() => setIsMobileMenuOpen(false)}
+        />
       </div>
 
       {/* Main Content */}

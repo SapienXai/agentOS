@@ -44,9 +44,11 @@ const navSections = [
 export function Sidebar({
   projectId = "coincollect",
   activeIndicatorId = "activeNav",
+  onNavigate,
 }: {
   projectId?: string;
   activeIndicatorId?: string;
+  onNavigate?: () => void;
 }) {
   const pathname = usePathname();
 
@@ -59,7 +61,7 @@ export function Sidebar({
   return (
     <div className="flex flex-col h-full w-64 bg-card border-r border-border/50">
       <div className="p-6 border-b border-border/50">
-        <Link href="/" className="flex items-center gap-3 w-full text-left hover:bg-accent/50 p-2 -ml-2 rounded-lg transition-colors group relative">
+        <Link href="/" onClick={onNavigate} className="flex items-center gap-3 w-full text-left hover:bg-accent/50 p-2 -ml-2 rounded-lg transition-colors group relative">
           <div className="bg-primary/10 p-2 rounded-md group-hover:bg-primary/20 transition-colors">
             <Hexagon className="w-6 h-6 text-primary" />
           </div>
@@ -85,6 +87,7 @@ export function Sidebar({
                 <Link
                   key={item.href}
                   href={href}
+                  onClick={onNavigate}
                   className={cn(
                     "flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium transition-all duration-300 relative group overflow-hidden",
                     isActive
