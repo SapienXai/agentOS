@@ -13,13 +13,13 @@ export default function GlobalDashboardPage() {
   const attentionNeeded = projects.filter((p) => p.approvals > 1 || p.outputs === "0 posts");
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8 space-y-6">
-      <div className="flex items-start justify-between gap-3">
+    <div className="max-w-7xl mx-auto px-4 py-6 space-y-6 sm:px-6 sm:py-8">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Global Operations Dashboard</h1>
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Global Operations Dashboard</h1>
           <p className="text-muted-foreground mt-2">Cross-project execution view: outputs, approvals, campaigns, outreach, and momentum.</p>
         </div>
-        <Link href="/projects" className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">Open All Projects</Link>
+        <Link href="/projects" className="inline-flex min-h-10 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-center text-sm font-medium text-primary-foreground hover:bg-primary/90 sm:w-auto">Open All Projects</Link>
       </div>
 
       <Card>

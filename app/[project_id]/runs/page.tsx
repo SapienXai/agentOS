@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card } from "@/components/ui/Card";
 import { Activity, AlertCircle, CheckCircle2, Clock, Terminal } from "lucide-react";
 
 const runs = [
@@ -52,7 +52,7 @@ export default function RunsPage() {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Runs & Logs</h1>
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Runs & Logs</h1>
         <p className="text-muted-foreground mt-2">Execution history and real-time debugging.</p>
       </div>
 
@@ -76,13 +76,13 @@ export default function RunsPage() {
                              {run.id}
                            </span>
                         </h3>
-                        <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">
+                        <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground sm:gap-4 sm:text-sm">
                            <span className="flex items-center gap-1">
                              <Clock className="w-3 h-3" /> {run.startedAt}
                            </span>
-                           <span>•</span>
+                           <span className="hidden sm:inline">•</span>
                            <span>Duration: {run.duration}</span>
-                           <span>•</span>
+                           <span className="hidden sm:inline">•</span>
                            <span>Trigger: {run.trigger}</span>
                         </div>
                       </div>

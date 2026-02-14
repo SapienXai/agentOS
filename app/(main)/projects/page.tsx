@@ -35,14 +35,14 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12 space-y-12 animate-in fade-in duration-500">
+    <div className="max-w-6xl mx-auto px-4 py-8 space-y-8 animate-in fade-in duration-500 sm:px-6 sm:py-12 sm:space-y-12">
       <section className="space-y-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tight">Your Projects</h1>
-            <p className="text-muted-foreground text-lg">Run autonomous growth operations across all your projects.</p>
+            <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Your Projects</h1>
+            <p className="text-muted-foreground text-base sm:text-lg">Run autonomous growth operations across all your projects.</p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
             <div className="relative hidden md:block">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <input 
@@ -51,19 +51,19 @@ export default function ProjectsPage() {
                 className="pl-9 pr-4 py-2 rounded-lg bg-secondary border border-border text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 w-64"
               />
             </div>
-            <button className="bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity flex items-center gap-2 shadow-lg shadow-primary/20">
+            <button className="inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-center font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-opacity hover:opacity-90 sm:w-auto">
               <Plus className="w-4 h-4" />
               New Project
             </button>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <Link key={project.id} href={`/${project.id}/operations`} className="group block h-full">
               <Card className="h-full hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 group-hover:bg-accent/5">
                 <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
-                  <div className="flex items-center gap-3">
+                  <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
                     <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:scale-110 transition-transform duration-300">
                       <Hexagon className="w-5 h-5" />
                     </div>
