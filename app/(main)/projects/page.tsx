@@ -40,7 +40,7 @@ export default function ProjectsPage() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tight">Your Projects</h1>
-            <p className="text-muted-foreground text-lg">Manage and monitor your AI agent fleets.</p>
+            <p className="text-muted-foreground text-lg">Run autonomous growth operations across all your projects.</p>
           </div>
           <div className="flex items-center gap-3">
             <div className="relative hidden md:block">
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <Link key={project.id} href={`/${project.id}/dashboard`} className="group block h-full">
+            <Link key={project.id} href={`/${project.id}/operations`} className="group block h-full">
               <Card className="h-full hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 group-hover:bg-accent/5">
                 <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
                   <div className="flex items-center gap-3">
