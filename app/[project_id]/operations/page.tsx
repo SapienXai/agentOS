@@ -45,12 +45,12 @@ export default function OperationsPage() {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Operations</h1>
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Operations</h1>
           <p className="text-muted-foreground mt-2">What SapienX did today, what&apos;s running this week, and what needs your approval next.</p>
         </div>
-        <Link href={`/${projectId}/runs`} className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">Open Runs / Logs</Link>
+        <Link href={`/${projectId}/runs`} className="inline-flex min-h-10 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-center text-sm font-medium text-primary-foreground hover:bg-primary/90 sm:w-auto">Open Runs / Logs</Link>
       </div>
 
       <Tabs value={activeWindow} onValueChange={setActiveWindow}>
@@ -139,12 +139,12 @@ export default function OperationsPage() {
       </div>
 
       <Card>
-        <CardHeader className="flex flex-row items-center justify-between">
+        <CardHeader className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <CardTitle>Outreach Pipeline</CardTitle>
           <Button variant="outline" size="sm">Add lead</Button>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
             {stages.map((stage) => (
               <div key={stage.key} className="rounded-xl border border-border bg-secondary/20 p-3 min-h-52">
                 <h4 className="text-sm font-semibold mb-3">{stage.label}</h4>
@@ -152,7 +152,7 @@ export default function OperationsPage() {
                   {leads.filter((lead) => lead.stage === stage.key).map((lead) => (
                     <div key={lead.id} className="rounded-lg bg-card border border-border p-2 space-y-1">
                       <p className="text-sm font-medium">{lead.name}</p>
-                      <p className="text-xs text-muted-foreground">{lead.channel} • Next: {lead.nextFollowUpAt}</p>
+                      <p className="text-xs text-muted-foreground break-words">{lead.channel} • Next: {lead.nextFollowUpAt}</p>
                       <p className="text-xs text-muted-foreground line-clamp-2">{lead.notes}</p>
                       <select
                         value={lead.stage}
@@ -171,7 +171,7 @@ export default function OperationsPage() {
       </Card>
 
       <Card>
-        <CardHeader className="flex flex-row items-center justify-between">
+        <CardHeader className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <CardTitle>Campaign Calendar</CardTitle>
           <Button size="sm">Generate next campaign plan</Button>
         </CardHeader>
@@ -182,7 +182,7 @@ export default function OperationsPage() {
                 <h4 className="font-medium">{campaign.name}</h4>
                 <Badge>{campaign.status}</Badge>
               </div>
-              <div className="grid md:grid-cols-4 gap-3 text-sm">
+              <div className="grid gap-3 text-sm sm:grid-cols-2 md:grid-cols-4">
                 {campaign.milestones.map((mile) => (
                   <div key={mile.label} className="rounded-lg border border-border p-2">
                     <p className="font-medium">{mile.label}</p>

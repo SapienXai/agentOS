@@ -10,7 +10,7 @@ export function Tabs({ value, onValueChange, className, children }: { value: str
 }
 
 export const TabsList = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn("inline-flex h-10 items-center rounded-lg bg-secondary p-1", className)} {...props} />
+  <div className={cn("flex w-full flex-wrap items-center gap-1 rounded-lg bg-secondary p-1 sm:inline-flex sm:h-10 sm:w-auto sm:flex-nowrap sm:gap-0", className)} {...props} />
 );
 
 export function TabsTrigger({ value, className, children }: { value: string; className?: string; children: React.ReactNode }) {
@@ -18,7 +18,7 @@ export function TabsTrigger({ value, className, children }: { value: string; cla
   if (!ctx) return null;
   const active = ctx.value === value;
   return (
-    <button onClick={() => ctx.onValueChange(value)} className={cn("inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm", active ? "bg-background text-foreground" : "text-muted-foreground", className)}>
+    <button onClick={() => ctx.onValueChange(value)} className={cn("inline-flex min-h-9 flex-1 items-center justify-center rounded-md px-3 py-1.5 text-sm sm:flex-none", active ? "bg-background text-foreground" : "text-muted-foreground", className)}>
       {children}
     </button>
   );

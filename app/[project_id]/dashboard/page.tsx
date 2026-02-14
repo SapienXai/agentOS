@@ -10,10 +10,10 @@ export default async function DashboardPage({ params }: { params: Promise<{ proj
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">System Dashboard</h1>
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">System Dashboard</h1>
           <p className="text-muted-foreground mt-2">Operational infrastructure, worker load, and run telemetry for this project.</p>
         </div>
-        <Link href={`/${project_id}/operations`} className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent">View Operations Summary</Link>
+        <Link href={`/${project_id}/operations`} className="inline-flex min-h-10 w-full items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-center text-sm font-medium hover:bg-accent sm:w-auto">View Operations Summary</Link>
       </div>
 
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
