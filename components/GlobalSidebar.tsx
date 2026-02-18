@@ -6,8 +6,8 @@ import {
   LayoutDashboard, 
   FolderGit2,
   Settings,
-  Hexagon,
-  Globe
+  Globe,
+  Flag
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -16,6 +16,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const navItems = [
   { name: "Global Dashboard", href: "/", icon: LayoutDashboard },
   { name: "All Projects", href: "/projects", icon: FolderGit2 },
+  { name: "BroBench", href: "/brobench/levels", icon: Flag },
   { name: "Settings", href: "/settings", icon: Settings },
 ];
 
