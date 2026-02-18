@@ -114,6 +114,13 @@ export function recordTaskAttempt(params: {
   const completedTaskIds = params.passed
     ? Array.from(new Set([...run.completedTaskIds, params.taskId]))
     : run.completedTaskIds;
+  const taskEvent: BrobenchRunEvent = {
+    id: `evt-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
+    taskId: params.taskId,
+    message: params.message,
+    type: params.passed ? "success" : "warning",
+    atIso: now
+  };
 
   const next: BrobenchStoredRun = {
     ...run,
@@ -127,16 +134,7 @@ export function recordTaskAttempt(params: {
       [params.taskId]: nextScore
     },
     completedTaskIds,
-    events: [
-      {
-        id: `evt-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
-        taskId: params.taskId,
-        message: params.message,
-        type: params.passed ? "success" : "warning",
-        atIso: now
-      },
-      ...run.events
-    ].slice(0, MAX_EVENTS)
+    events: [taskEvent, ...run.events].slice(0, MAX_EVENTS)
   };
 
   store[params.runId] = next;
